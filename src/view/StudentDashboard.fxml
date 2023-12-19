@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="475.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentDashboard">
+    <children>
+        <TableView fx:id="studentsTable" layoutX="19.0" layoutY="151.0" prefHeight="309.0" prefWidth="511.0">
+            <columns>
+                <TableColumn fx:id="studentIdColumn" prefWidth="83.1748046875" text="Student ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="219.32518005371094" text="Name" />
+                <TableColumn fx:id="phoneColumn" prefWidth="207.68582153320312" text="Phone" />
+            </columns>
+        </TableView>
+        <Button layoutX="34.0" layoutY="109.0" mnemonicParsing="false" onAction="#toAddStudent" text="Add" />
+        <Button layoutX="95.0" layoutY="109.0" mnemonicParsing="false" onAction="#toUpdateStudent" text="Update" />
+        <Button layoutX="175.0" layoutY="109.0" mnemonicParsing="false" onAction="#deleteStudent" text="Delete" />
+        <Button layoutX="26.0" layoutY="22.0" mnemonicParsing="false" onAction="#toLessonDashboard" text="Exit" />
+      <Label layoutX="210.0" layoutY="21.0" prefHeight="63.0" prefWidth="141.0" text="Students" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTextField" layoutX="258.0" layoutY="109.0" onAction="#getResultsHandler" prefHeight="26.0" prefWidth="200.0" promptText="Search" />
+      <Button fx:id="searchButton" layoutX="474.0" layoutY="109.0" mnemonicParsing="false" onAction="#getResultsHandler" text="Search" />
+    </children>
+</AnchorPane>

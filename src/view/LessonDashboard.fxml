@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LessonDashboard">
+    <children>
+        <TableView fx:id="lessonsTable" layoutX="5.0" layoutY="162.0" prefHeight="429.0" prefWidth="1230.0">
+            <columns>
+                <TableColumn fx:id="lessonIdColumn" prefWidth="108.00000762939453" text="Lesson_Id" />
+                <TableColumn fx:id="typeColumn" prefWidth="276.0" text="Type" />
+                <TableColumn fx:id="studentIdColumn" prefWidth="118.0" text="Student_Id" />
+                <TableColumn fx:id="startColumn" prefWidth="214.5" text="Start" />
+                <TableColumn fx:id="endColumn" minWidth="0.0" prefWidth="305.39141845703125" text="End" />
+                <TableColumn fx:id="lessonProfitColumn" prefWidth="206.60858154296875" text="Lesson_Profit" />
+            </columns>
+        </TableView>
+        <Button layoutX="22.0" layoutY="49.0" mnemonicParsing="false" onAction="#toStudentDashboard" text="Students" />
+        <Button layoutX="20.0" layoutY="121.0" mnemonicParsing="false" onAction="#toAddLesson" text="Add" />
+        <Button layoutX="68.0" layoutY="121.0" mnemonicParsing="false" onAction="#toUpdateLesson" text="Update" />
+        <Button fx:id="deleteLessonButton" layoutX="131.0" layoutY="121.0" mnemonicParsing="false" onAction="#deleteLesson" text="Delete" />
+
+        <Button fx:id="typeMonthButton" layoutX="1157.0" layoutY="49.0" mnemonicParsing="false" onAction="#getTypeMonthProfits" prefHeight="25.0" prefWidth="73.0" text="Report" />
+
+        <TableView fx:id="typeMonthProfitsTable" focusTraversable="false" layoutX="5.0" layoutY="162.0" prefHeight="429.0" prefWidth="1230.0" scaleZ="0.0" visible="false">
+            <columns>
+                <TableColumn fx:id="typeReportColumn" prefWidth="108.00000762939453" text="Type" />
+                <TableColumn fx:id="monthReportColumn" prefWidth="121.0" text="Month" />
+                <TableColumn fx:id="lessonSumColumn" prefWidth="90.0" text="Lesson Profit" />
+            </columns>
+        </TableView>
+      <TableView fx:id="weekTable" layoutX="5.0" layoutY="162.0" prefHeight="429.0" prefWidth="1230.0" visible="false">
+         <columns>
+            <TableColumn fx:id="lessonIdWeekColumn" prefWidth="108.00000762939453" text="Lesson_Id" />
+            <TableColumn fx:id="typeWeekColumn" prefWidth="276.0" text="Type" />
+            <TableColumn fx:id="studentIdWeekColumn" prefWidth="118.0" text="Student_Id" />
+            <TableColumn fx:id="startWeekColumn" prefWidth="214.5" text="Start" />
+            <TableColumn fx:id="endWeekColumn" minWidth="0.0" prefWidth="305.39141845703125" text="End" />
+            <TableColumn fx:id="lessonProfitWeekColumn" prefWidth="206.60858154296875" text="Lesson_Profit" />
+         </columns>
+      </TableView>
+
+        <ComboBox fx:id="typeComboBox" layoutX="875.0" layoutY="49.0" prefHeight="26.0" prefWidth="133.0" promptText="Type" />
+        <ComboBox fx:id="monthComboBox" layoutX="1016.0" layoutY="49.0" prefHeight="26.0" prefWidth="133.0" promptText="Month" />
+
+        <Button fx:id="weekButton" layoutX="1156.0" layoutY="83.0" mnemonicParsing="false" onAction="#weekReport" prefHeight="25.0" prefWidth="73.0" text="Report" />
+        <Button fx:id="milesReport" layoutX="1156.0" layoutY="119.0" mnemonicParsing="false" onAction="#milesReport" prefHeight="25.0" prefWidth="73.0" text="Report" />
+        <Label layoutX="974.0" layoutY="9.0" text="Reports">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="20.0" layoutY="92.0" text="Lesson functions">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+        <Label layoutX="23.0" layoutY="23.0" text="Student Dashboard">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="369.0" layoutY="9.0" prefHeight="63.0" prefWidth="277.0" text="LessonScheduler" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="resetView" defaultButton="true" layoutX="192.0" layoutY="121.0" mnemonicParsing="false" onAction="#populateMainTable" prefHeight="26.0" prefWidth="143.0" text="Reset View" />
+      <DatePicker fx:id="weekDatePicker" layoutX="1016.0" layoutY="83.0" prefHeight="26.0" prefWidth="133.0" promptText="Choose Date" />
+      <ComboBox fx:id="monthMilesComboBox" layoutX="1017.0" layoutY="119.0" prefHeight="26.0" prefWidth="132.0" promptText="Month" />
+      <TableView fx:id="monthMilesTable" focusTraversable="false" layoutX="5.0" layoutY="162.0" prefHeight="429.0" prefWidth="1230.0" visible="false">
+         <columns>
+            <TableColumn fx:id="monthMilesColumn" prefWidth="121.0" text="Month" />
+            <TableColumn fx:id="milesColumn" prefWidth="90.0" text="Total Miles" />
+         </columns>
+      </TableView>
+      <Label layoutX="699.0" layoutY="54.0" text="Monthly Profit by Lesson Type" />
+      <Label layoutX="737.0" layoutY="87.0" text="Week Of Selected Date" />
+      <Label layoutX="724.0" layoutY="121.0" text="Miles Commute by Month" />
+    </children>
+</AnchorPane>
